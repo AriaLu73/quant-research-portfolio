@@ -1,0 +1,7 @@
+market,date,series,horizon,metric,value,notes
+ESU6,2026,midprice_difference,1s,ACF_lag1,-0.14,"Approximate visual estimate from partial reconstructed sample (~15,542 seconds)"
+ESU6,2026,midprice_difference,1s,PACF_lag1,-0.14,"Approximate visual estimate"
+ESU6,2026,midprice_difference,2s,PACF_lag2,-0.04,"Approximate visual estimate"
+BTCUSDT,2026-10-20,log_close_return,1s,ACF_lag1,0.15,"Approximate visual estimate from full day"
+BTCUSDT,2026-10-20_first_12h,log_close_return,1s,ACF_lag1,0.1620,"Exact split-sample calculation"
+BTCUSDT,2026-10-20_last_12h,log_close_return,1s,ACF_lag1,0.1492,"Exact split-sample calculation"
