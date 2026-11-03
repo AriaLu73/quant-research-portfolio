@@ -1,0 +1,93 @@
+{
+  "symbol": "binance_spot:ETHUSD",
+  "files": [
+    {
+      "path": "/Users/lujingyi/Downloads/time-series-analysis/projects/02_ar1_eth/data/cleaned/eth_l2_2026-10-10.csv",
+      "sha256": "21b411d73965de33e7d4bfe3b9894bc33c000ebf5072abf70af8c0b02b3ecabb"
+    },
+    {
+      "path": "/Users/lujingyi/Downloads/time-series-analysis/projects/02_ar1_eth/data/cleaned/eth_l2_2026-10-11.csv",
+      "sha256": "4f4a51f906b6d18634052898d4282cfd5cbf2cae282379f2805c41a91a12614f"
+    },
+    {
+      "path": "/Users/lujingyi/Downloads/time-series-analysis/projects/02_ar1_eth/data/cleaned/eth_l2_2026-10-12.csv",
+      "sha256": "6f100d38395c6fe718517d94e286cd7f23c798ced2eed9217c4935c75c33dde0"
+    },
+    {
+      "path": "/Users/lujingyi/Downloads/time-series-analysis/projects/02_ar1_eth/data/cleaned/eth_l2_2026-10-13.csv",
+      "sha256": "24950b901355665c771054a0e25fc3f16dc4473d8e242a980c1d89b58f4231ef"
+    },
+    {
+      "path": "/Users/lujingyi/Downloads/time-series-analysis/projects/02_ar1_eth/data/cleaned/eth_l2_2026-10-14.csv",
+      "sha256": "905abff4c44f9e4607379afbefef41ee36e4537386b1b5afb48bb5a0f17c3ada"
+    },
+    {
+      "path": "/Users/lujingyi/Downloads/time-series-analysis/projects/02_ar1_eth/data/cleaned/eth_l2_2026-10-15.csv",
+      "sha256": "1965c9d4b40014a55179754c708857d1ca6a18acafb8cfe3b712329c40e15c0c"
+    },
+    {
+      "path": "/Users/lujingyi/Downloads/time-series-analysis/projects/02_ar1_eth/data/cleaned/eth_l2_2026-10-16.csv",
+      "sha256": "6ff641b005be821c5159c1ca2ffb31df0407f724078acbab2eafb6611b8f3d7e"
+    },
+    {
+      "path": "/Users/lujingyi/Downloads/time-series-analysis/projects/02_ar1_eth/data/cleaned/eth_l2_2026-10-17.csv",
+      "sha256": "e997753a084af1298786f50da4c71009cf1f4783e4e0f9bf9fec3bec0dd65af0"
+    },
+    {
+      "path": "/Users/lujingyi/Downloads/time-series-analysis/projects/02_ar1_eth/data/cleaned/eth_l2_2026-10-18.csv",
+      "sha256": "ee0e195309c3c676554bf29804061ab2a7b12e3bbb865096f800413d2ecd0003"
+    },
+    {
+      "path": "/Users/lujingyi/Downloads/time-series-analysis/projects/02_ar1_eth/data/cleaned/eth_l2_2026-10-19.csv",
+      "sha256": "d0647b00774b7b1061775899f521f6d6a9bdd95b02970c91a667ef8abdd41562"
+    }
+  ],
+  "timestamp_column": "local_time_ns",
+  "timestamp_unit": "ns",
+  "timestamp_meaning": "local_receive_time",
+  "column_templates": {
+    "bid_price": "bid_price_{level}",
+    "bid_qty": "bid_qty_{level}",
+    "ask_price": "ask_price_{level}",
+    "ask_qty": "ask_qty_{level}"
+  },
+  "K": 5,
+  "interval": "1s",
+  "max_age": "300s",
+  "cutoffs": {
+    "start": "2026-10-09 23:59:58+00:00",
+    "train_end": "2026-10-15 23:59:59.200000+00:00",
+    "validation_end": "2026-10-17 23:59:59.600000+00:00",
+    "stop": "2026-10-20 00:00:00+00:00"
+  },
+  "HAC_lags": 10,
+  "alpha": 0.05,
+  "DM_HAC_lags": 600,
+  "DM_sensitivity_lags": [
+    60,
+    3600
+  ],
+  "DM_comparisons": [
+    [
+      "ar1",
+      "mean"
+    ],
+    [
+      "ar1",
+      "persistence"
+    ]
+  ],
+  "final_test_opened": true,
+  "snapshot_audit": {
+    "input_rows": 1323796,
+    "exact_duplicates_removed": 9,
+    "source_time_reversals": 0,
+    "invalid_snapshots": 0,
+    "first_timestamp": "2026-10-09 23:59:57.342750960+00:00",
+    "last_timestamp": "2026-10-19 23:59:59.783537671+00:00"
+  },
+  "python": "3.9.13",
+  "numpy": "1.24.4",
+  "pandas": "2.3.3",
+  "scipy": "1.9.1"
+}
