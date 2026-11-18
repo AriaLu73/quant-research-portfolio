@@ -1,0 +1,84 @@
+# 合约三级风控 · 实盘(附录 A);数值一律字符串 → Decimal;Web 调参热更新自动回写
+global:
+  # ---- 2026-09-03 $1 万自有资金实弹试验期档(权益 $10k 口径) ----
+  daily_max_loss_abs: "300"                       # 日亏 $300(3%)→ PT 层拒新开仓
+  daily_max_loss_pct: "0.03"
+  drawdown_tiers: ["0.015", "0.03", "0.05"]       # IT-01: $150 WARN / $300 全局只减仓 / $500 FATAL
+  auto_kill_on_dd_fatal: true                     # FATAL 自动一键平仓(停策略→只减仓→市价平)
+                                                  # 融资放量后按新权益重设三档并评估是否保留自动
+  consecutive_loss_n: 5
+  halt_minutes: 30
+  max_orders_per_10s: 20
+  max_orders_per_day: 5000
+  max_price_deviation_pct: "0.005"
+  circuit_breaker:                                 # 附录 D.3 熔断
+    window_s: 10
+    fail_rate_threshold: "0.05"
+    cooldown_s: 60
+  concentration:
+    max_symbol_concentration_pct: "0.20"
+    by_category: {mainstream: "0.60", altcoin: "0.15", platform: "0.25"}
+
+okx:
+  max_order_notional: "50000"
+  max_position_notional_per_symbol: "200000"
+  max_leverage: {default: "10", BTC-USDT-SWAP: "20", altcoin_default: "3"}
+  min_margin_ratio: "1.5"
+  margin_call_tiers: ["3.0", "2.0", "1.5", "1.2"]  # IT-02: INFO/WARN/ERROR/FATAL
+  liquidation_distance_pct: "0.10"
+  funding_rate_abnormal: "0.003"
+  funding_rate_jump: "0.0015"
+  max_funding_cost_pct: "0.001"
+  allowed_margin_modes: [isolated, cross]
+  position_recon_tolerance: "0.0001"
+  liq_impact_notional: "500000"     # IT-05 强平冲击滚动窗口阈值
+  liq_impact_window_s: 60
+  volatility_alert_pct: "0.03"          # IT-06 1min 波动告警
+
+binance:
+  max_order_notional: "50000"
+  max_position_notional_per_symbol: "200000"
+  max_leverage: {default: "10", usdt_m_default: "20", coin_m_default: "10"}
+  min_margin_ratio: "1.5"
+  margin_call_tiers: ["3.0", "2.0", "1.5", "1.2"]
+  liquidation_distance_pct: "0.10"
+  funding_rate_abnormal: "0.003"
+  funding_rate_jump: "0.0015"
+  max_funding_cost_pct: "0.001"
+  allowed_margin_modes: [isolated, cross]
+  position_recon_tolerance: "0.0001"
+  liq_impact_notional: "500000"     # IT-05 强平冲击滚动窗口阈值
+  liq_impact_window_s: 60
+  volatility_alert_pct: "0.03"          # IT-06 1min 波动告警
+
+kucoin:                                            # 新链路默认更保守
+  max_order_notional: "20000"
+  max_position_notional_per_symbol: "80000"
+  max_leverage: {default: "5"}
+  min_margin_ratio: "2.0"
+  margin_call_tiers: ["3.5", "2.5", "2.0", "1.5"]
+  liquidation_distance_pct: "0.12"
+  funding_rate_abnormal: "0.003"
+  funding_rate_jump: "0.0015"
+  max_funding_cost_pct: "0.001"
+  allowed_margin_modes: [isolated]
+  position_recon_tolerance: "0.0001"
+  liq_impact_notional: "200000"     # IT-05 强平冲击滚动窗口阈值
+  liq_impact_window_s: 60
+  volatility_alert_pct: "0.03"          # IT-06 1min 波动告警
+
+htx:                                               # 2026-09-15 新链路,参照 KuCoin 保守档
+  max_order_notional: "20000"
+  max_position_notional_per_symbol: "80000"
+  max_leverage: {default: "5"}
+  min_margin_ratio: "2.0"
+  margin_call_tiers: ["3.5", "2.5", "2.0", "1.5"]
+  liquidation_distance_pct: "0.12"
+  funding_rate_abnormal: "0.003"
+  funding_rate_jump: "0.0015"
+  max_funding_cost_pct: "0.001"
+  allowed_margin_modes: [isolated, cross]          # U本位缺省全仓(exchanges.yaml swap_margin_mode)
+  position_recon_tolerance: "0.0001"
+  liq_impact_notional: "200000"     # IT-05 强平冲击滚动窗口阈值
+  liq_impact_window_s: 60
+  volatility_alert_pct: "0.03"          # IT-06 1min 波动告警

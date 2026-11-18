@@ -1,0 +1,13 @@
+# 合约规格与费率。来源:任务书 v2 文件头(KuCoin 公开合约接口 2026-11-06 查询;费率出自《KuCoin Market Maker Program Ver. April 2026》PDF 第一页)。
+# 张数 ↔ 币:qty_coin = n_contracts * mult;USDC 合约一张 = 同币种 USDT 合约的 1/10。
+XBTUSDTM: {tick: 0.1,  mult: 0.001,  coin: BTC, quote: USDT, maker_bp: -0.7, taker_bp: 1.8,
+           l3_dir: data\research5\usdc_pairs_l3usdt, trd_dir: data\research5\usdc_pairs,
+           l2buy_dir: BTC-USDT, status: 跑(用户 11-06 "如果没有数据就不跑")}
+XBTUSDCM: {tick: 0.1,  mult: 0.0001, coin: BTC, quote: USDC, maker_bp: -1.2, taker_bp: 1.8,
+           l3_dir: data\research5\usdc_pairs, trd_dir: data\research5\usdc_pairs,
+           l2buy_dir: BTC-USDC, status: 跑}
+ETHUSDCM: {tick: 0.01, mult: 0.001,  coin: ETH, quote: USDC, maker_bp: -1.2, taker_bp: 1.8,
+           l3_dir: data\research5\usdc_pairs, trd_dir: data\research5\usdc_pairs,
+           l2buy_dir: ETH-USDC, status: 跑(引擎 L3_DIR/TICK/MULT 在适配层注入,不改 l3sim.py)}
+ETHUSDTM: {tick: 0.01, mult: 0.01,   coin: ETH, quote: USDT, maker_bp: -0.7, taker_bp: 1.8,
+           l3_dir: null, trd_dir: null, l2buy_dir: ETH-USDT, status: 不跑(无 L3,附录第1条)}
