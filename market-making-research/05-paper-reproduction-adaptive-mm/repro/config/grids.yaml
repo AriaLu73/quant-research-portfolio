@@ -1,0 +1,11 @@
+# 网格。每个值后注明来源。
+dt_ms: [100, 250, 500, 1000, 2000]          # Step 12;1000 为论文基准
+latency_ms:
+  main: [1.8, 3.8]                           # latency.yaml 实测 p50 / p99
+  congested: 50                              # 用户 2026-10-03 口径
+  robustness: [10, 25]                       # latency.yaml 网格
+  monotonic: [0, 1.8, 3.8, 10]               # Step 15 第 2 条
+vlo_mult: [0.5, 1.0, 2.0]                    # 任务书文件头 V_LO 敏感性
+gamma_scan: null                             # Step 13.7:范围由本地库存方差量级标定后填,不许凭感觉
+lambda_msft: 0.0005                          # Part A 仅作复现对照,"MSFT 值"
+T_partB_s: 300                               # P2 Table 4c
