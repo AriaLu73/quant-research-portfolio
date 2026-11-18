@@ -7,8 +7,8 @@ We checked our side carefully first: our software and network take about 1–2 m
 Is there a setup you would recommend for market makers to get the best order entry at busy times? We're happy to change anything on our side or run a small test if that helps.
 
 In case it's useful, a few example orders (UTC, 2026-10-02, XBTUSDCM):
-495605399030927361 (20:58:57)
-495605371856031745 (20:58:50)
-495590420819021827 (19:59:25)
+[id removed] ([time removed])
+[id removed] ([time removed])
+[id removed] ([time removed])
 
 No rush at all, and thanks a lot!

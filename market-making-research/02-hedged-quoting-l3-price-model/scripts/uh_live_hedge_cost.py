@@ -8,10 +8,10 @@ with contextlib.redirect_stdout(io.StringIO()):
     ns = runpy.run_path(__file__.replace("uh_live_hedge_cost.py", "uh_flow_now.py"))
 ht, hmid, at = ns["ht"], ns["hmid"], ns["at"]
 # (quote fill time, hedge side, hedge fill time, hedge price, hedge qty, version)
-H = [("16:43:02.613", "buy", "16:43:04.713", 85112.0, 0.004, "v7"), ("17:11:23.953", "sell", "17:11:30.774", 85000.3, 0.001, "v7"),
-     ("17:24:51.600", "buy", "17:24:51.816", 84714.7, 0.021, "v7"), ("19:11:07.180", "sell", "19:11:14.237", 84073.9, 0.004, "v7"),
-     ("19:32:13.940", "sell", "19:32:16.150", 84088.9, 0.004, "v7"), ("19:36:36.270", "buy", "19:36:37.276", 84195.8, 0.003, "v7"),
-     ("20:56:38.500", "sell", "20:57:21.085", 84337.0, 0.003, "v9"), ("20:59:17.400", "buy", "20:59:27.487", 84463.1, 0.008, "v9")]
+H = [("[time removed]", "buy", "[time removed]", 85112.0, 0.004, "v7"), ("[time removed]", "sell", "[time removed]", 85000.3, 0.001, "v7"),
+     ("[time removed]", "buy", "[time removed]", 84714.7, 0.021, "v7"), ("[time removed]", "sell", "[time removed]", 84073.9, 0.004, "v7"),
+     ("[time removed]", "sell", "[time removed]", 84088.9, 0.004, "v7"), ("[time removed]", "buy", "[time removed]", 84195.8, 0.003, "v7"),
+     ("[time removed]", "sell", "[time removed]", 84337.0, 0.003, "v9"), ("[time removed]", "buy", "[time removed]", 84463.1, 0.008, "v9")]
 def ms(hms):
     h, m, s = hms.split(":")
     return int(dt.datetime(2026, 10, 2, int(h), int(m), int(float(s)), int(round(float(s) % 1 * 1e6)), tzinfo=dt.timezone.utc).timestamp() * 1000)

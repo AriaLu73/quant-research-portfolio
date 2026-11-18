@@ -177,7 +177,7 @@ def finalize_day(rows, anchor, trades, audit, depth):
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__.splitlines()[0])
-    parser.add_argument("--source", type=Path, default=Path("/Users/lujingyi/Desktop/样本"))
+    parser.add_argument("--source", type=Path, default=Path("Desktop/样本"))
     parser.add_argument("--output", type=Path, default=PROJECT_DIR / "data" / "cleaned")
     parser.add_argument("--depth", type=int, default=10)
     args = parser.parse_args()

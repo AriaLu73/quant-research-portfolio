@@ -1,7 +1,7 @@
 # Order entry delay inside the exchange on our Unified Account — request for diagnosis
 
 **From:** ME Capital (market maker, Futures OUR_FEE_TIER)
-**Account:** UID [id removed], Unified Account (UTA); API key remark `MM-U9`
+**Account:** UID [id removed], Unified Account (UTA); API key remark [id removed]
 **Colocation:** source IP OUR_IP (OUR_DATACENTER OUR_DATACENTER, zone OUR_DATACENTER), KuCoin colo endpoints
 **Order entry:** private WebSocket order channel (`/v2/private`, `op: uta.order` / `uta.cancel`); REST `/api/ua/v2/unified/order/*` as fallback
 **Period measured:** 2026-10-02 18:49 – 21:03 UTC
@@ -58,9 +58,9 @@ orders taking more than 10 ms:
 
 Weighted to our load, other participants have 6.0% of orders slower than 10 ms against our 11.9%. The slow sender in
 the table is slow at the same instants as we are: when our order is slow, its orders within ±5 ms are slow 56% of the
-time (9% when ours is fast); the fastest sender's orders, 1%. Example, one 5 ms window: ours 495605371856031745
-received 20:58:50.553293, resting .584 (31 ms); 495605371835072517 received .548487, resting .582 (34 ms);
-495605371835043844 received .548950, resting .550 (1 ms). Where the order is placed (improving the touch, joining it,
+time (9% when ours is fast); the fastest sender's orders, 1%. Example, one 5 ms window: ours [id removed]
+received [time removed], resting [time removed] (31 ms); [id removed] received [time removed], resting [time removed] (34 ms);
+[id removed] received [time removed], resting [time removed] (1 ms). Where the order is placed (improving the touch, joining it,
 or deeper) does not change this. Senders are told apart only by the pattern of their public `clientOid`.
 
 ## Orders received later rest earlier

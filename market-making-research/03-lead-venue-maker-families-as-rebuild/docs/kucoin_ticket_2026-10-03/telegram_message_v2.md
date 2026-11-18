@@ -9,13 +9,13 @@ What we measure: for each order, `ts − orderTime` of its `open` message in you
 - one other large sender: 11.4–27.9%, slow at the same instants as us (when our order is slow, its orders within ±5 ms are slow 56% of the time; the fastest sender's orders, 1%)
 
 Same 5 ms window, three orders:
-- ours 495605371856031745: received 20:58:50.553293, resting .584 (31 ms)
-- 495605371835072517: received .548487, resting .582 (34 ms)
-- 495605371835043844: received .548950, resting .550 (1 ms)
+- ours [id removed]: received [time removed], resting [time removed] (31 ms)
+- [id removed]: received [time removed], resting [time removed] (34 ms)
+- [id removed]: received [time removed], resting [time removed] (1 ms)
 
 2) Orders received after ours rest before ours:
-- ours 495605399030927361: received 20:58:57.032027, resting .075
-- 495605399030939658: received .032482 (later), resting .034 (earlier)
+- ours [id removed]: received [time removed], resting [time removed]
+- [id removed]: received [time removed] (later), resting [time removed] (earlier)
 
 3) It is not our sending pattern: no relation to our request rate, our number of open orders, our own cancels in flight, price placement (touch vs deep), side or size; REST orders show the same as WebSocket.
 
@@ -23,7 +23,7 @@ Questions:
 1. At busy moments, what queue do our orders wait in between `orderTime` and `ts`, and why do some participants not wait in it? Is it per gateway, per connection, per account type (Unified vs classic), or per API tier?
 2. What should we change to be on the fast path: a classic futures account or sub-account, a different endpoint, a market-maker gateway, a priority setting?
 3. Could you look up these order ids in your logs and tell us where the time was spent?
-XBTUSDCM: 495573039476445187, 495578942044966916, 495579169187500034, 495581038337134595, 495588047585349641, 495590420819021827, 495605371856031745, 495605399030927361
-XBTUSDTM: 495578262756462598, 495605523010359304
+XBTUSDCM: [id removed], [id removed], [id removed], [id removed], [id removed], [id removed], [id removed], [id removed]
+XBTUSDTM: [id removed], [id removed]
 
 We can run any controlled test you suggest and send the order ids. Full data available if useful.

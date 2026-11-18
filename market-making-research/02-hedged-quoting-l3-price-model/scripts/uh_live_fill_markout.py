@@ -6,8 +6,8 @@ sys.argv = ["x", "20261002", "BTC"]
 with contextlib.redirect_stdout(io.StringIO()):
     ns = runpy.run_path(__file__.replace("uh_live_fill_markout.py", "uh_flow_now.py"))
 ht, hmid, qt, qmid, at, g, basis = ns["ht"], ns["hmid"], ns["qt"], ns["qmid"], ns["at"], ns["g"], ns["basis"]
-FILLS = [("16:43:02.613", "sell", 85117.5, 0.0044, "near"), ("17:11:23.953", "buy", 85102.0, 0.0022, "near"), ("17:24:51.600", "sell", 84754.8, 0.0221, "far (cancel refused)"),
-         ("19:11:07.180", "buy", 84121.1, 0.0044, "near"), ("19:32:13.940", "buy", 84154.0, 0.0044, "near"), ("19:36:36.270", "sell", 84229.5, 0.0044, "near")]
+FILLS = [("[time removed]", "sell", 85117.5, 0.0044, "near"), ("[time removed]", "buy", 85102.0, 0.0022, "near"), ("[time removed]", "sell", 84754.8, 0.0221, "far (cancel refused)"),
+         ("[time removed]", "buy", 84121.1, 0.0044, "near"), ("[time removed]", "buy", 84154.0, 0.0044, "near"), ("[time removed]", "sell", 84229.5, 0.0044, "near")]
 print("fill                         level                 depth vs fair bp | USDT mid move in our favour after 1 s / 5 s / 30 s / 60 s bp | before the fill 0.1 s / 1 s")
 tot = 0.0
 for hms, side, px, qty, lvl in FILLS:
